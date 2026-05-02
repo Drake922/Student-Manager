@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://localhost:5000; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+  <title> Student Manager App </title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Student Manager App</h1>
+
+<h3 style="text-decoration: underline;">Add Student</h3>
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<input id="course" placeholder="Course">
+<button id="submitBtn" onclick="addStudent()">Add Student</button>
+
+<h3 style="text-decoration: underline;">Students List</h3>
+<button onclick="loadStudents()">Refresh</button>
+
+<table id="studentsTable" border="3">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Course</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
