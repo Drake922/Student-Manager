@@ -13,7 +13,7 @@ app.use(express.json(path.join(__dirname, "public")));
 
 app.use("/api/students", studentRoutes);
 
-const Port = process.env.PORT || 5000
+const Port = process.env.PORT || 8080
 
 app.listen(Port, () => {
   console.log(`Server is running on ${Port}`);
