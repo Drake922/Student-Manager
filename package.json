@@ -1,14 +1,10 @@
 {
   "name": "mysqlwithnode",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
+  "description": "We are practicing node javascript with mysql and postman",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
