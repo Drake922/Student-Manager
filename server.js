@@ -1,20 +1,26 @@
 require("dotenv").config();
+
 const express = require("express"); 
 const cors = require("cors");
-const path = require("path")
+//Today: In your server.js, add this two lines below
+const path = require("path"); //1st and
 
-const studentRoutes = require("./studentroutes/routes");
+const studentRoutes = require("./routes/studentroutes.js");
 
 const app = express();
 
 app.use(cors());
 
-app.use(express.json(path.join(__dirname, "public")));
+app.use(express.json());
 
-app.use("/api/students", studentRoutes);
+app.use(express.static(path.join(__dirname, "public"))); //2nd
 
-const Port = process.env.PORT || 8080
+app.use("/api/students", studentRoutes); //where visit on url to communicate with server e.g www.ourapp.com/api/students
 
-app.listen(Port, () => {
-  console.log(`Server is running on ${Port}`);
-});
+
+const Port = process.env.PORT || 3000;
+
+app.listen(Port, () =>{
+ console.log(`Server is running on ${Port}`)
+
+  })

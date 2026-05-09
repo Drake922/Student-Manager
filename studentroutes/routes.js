@@ -4,6 +4,7 @@ const db = require("../db");
 
 
 const router = express.Router();
+
 // GET all students
 router.get("/", (req, res) => {
   db.query("SELECT * FROM students", (err, result) => {
@@ -25,6 +26,7 @@ router.post("/", (req, res) => {
     },
   );
 });
+
 // UPDATE student
 router.put("/:id", (req, res) => {
   const { name, email, course } = req.body;
@@ -37,6 +39,7 @@ router.put("/:id", (req, res) => {
     },
   );
 });
+
 // DELETE student
 router.delete("/:id", (req, res) => {
   db.query("DELETE FROM students WHERE id=?", [req.params.id], (err) => {
@@ -44,4 +47,5 @@ router.delete("/:id", (req, res) => {
     res.json({ message: "Student deleted" });
   });
 });
+
 module.exports = router;
